@@ -2,7 +2,7 @@ FROM mysql:8
 
 USER root
 
-RUN apt-get update && apt-get install sudo
+RUN apt-get update && apt-get install sudo && rm -rf /var/lib/apt/lists/*
 
 # Debian way to add user & group
 RUN id -u docker >/dev/null 2>&1 || { addgroup --gid 9999 docker && adduser --uid 9999 \ 
